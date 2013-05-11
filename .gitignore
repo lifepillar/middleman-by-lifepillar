@@ -12,3 +12,10 @@
 
 # Ignore Sass' cache
 /.sass-cache
+
+# Ruby managers
+.rbenv-version
+.rvmrc
+
+# OS X specific
+.DS_Store
