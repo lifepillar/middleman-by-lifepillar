@@ -9,11 +9,24 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= data.page.title || "The Middleman" %></title>
     
-    <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
+    <%= stylesheet_link_tag "main" %>
+    <%= javascript_include_tag  "vendor/custom.modernizr" %>
   </head>
   
   <body class="<%= page_classes %>">
     <%= yield %>
+
+    <!-- Check for Zepto support, load jQuery if necessary -->
+    <script>
+      document.write('<script src=/javascripts/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js><\/script>');
+    </script>
+    <%= javascript_include_tag "foundation" %>
+    <script>
+      $(function(){
+        $(document).foundation();
+      })
+    </script>
   </body>
 </html>
