@@ -1,4 +1,8 @@
+require 'kramdown'
 require 'zurb-foundation'
+
+set :markdown_engine, :kramdown
+set :md, :layout_engine => :erb
 
 ignore "javascripts/foundation/*"
 
