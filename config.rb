@@ -1,5 +1,7 @@
 require 'zurb-foundation'
 
+ignore "javascripts/foundation/*"
+
 ###
 # Compass
 ###
