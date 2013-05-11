@@ -74,3 +74,13 @@ configure :build do
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
+
+# Middleman Deploy
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.user = 'username'
+  deploy.host = 'hostname'
+  deploy.port = 22
+  deploy.path = '/deployment/path'
+  deploy.clean = true
+end
