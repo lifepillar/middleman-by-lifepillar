@@ -5,13 +5,13 @@
 # git config --global core.excludesfile ~/.gitignore_global
 
 # Ignore bundler config
-/.bundle
+.bundle
 
 # Ignore the build directory
 /public
 
 # Ignore Sass' cache
-/.sass-cache
+.sass-cache
 
 # Ruby managers
 .rbenv-version
