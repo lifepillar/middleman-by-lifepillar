@@ -1,2 +1,10 @@
-@import "zurb-foundation/app";
+// Global Foundation Settings
+@import "zurb-foundation/settings";
+// Comment out this import if you don't want to use normalize
+@import "zurb-foundation/normalize";
+// Override the settings in Zurb Foundation _settings.scss
+@import "foundation-settings-overrides";
+// Check zurb-foundation/_app.scss if you are customizing your import below
+@import "foundation";
+// Font Awesome
 @import "font-awesome/font-awesome";
