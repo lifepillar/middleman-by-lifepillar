@@ -86,6 +86,31 @@ configure :build do
   # set :http_path, "/Content/images/"
 end
 
+# Middleman Blog
+# Time.zone = "UTC"
+activate :blog do |blog|
+  blog.prefix = "/blog"
+  blog.permalink = ":year/:month/:day/:title.html"
+  blog.sources = ":year-:month-:day-:title.html"
+  blog.taglink = "tags/:tag.html"
+  blog.layout = "article"
+  blog.summary_separator = /(READMORE)/
+  blog.summary_length = 250
+  blog.year_link = ":year.html"
+  blog.month_link = ":year/:month.html"
+  blog.day_link = ":year/:month/:day.html"
+  blog.default_extension = ".md"
+
+  blog.tag_template = "/blog/tag.html"
+  blog.calendar_template = "/blog/calendar.html"
+
+  blog.paginate = true
+  blog.per_page = 5
+  blog.page_link = "page/:num"
+end
+
+page "/blog/feed.xml", :layout => false
+
 # Middleman Deploy
 activate :deploy do |deploy|
   deploy.method = :rsync

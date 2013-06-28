@@ -1,0 +1,14 @@
+<% wrap_layout :layout do %>
+
+  <!-- Main Blog Content -->
+  <div class="row">
+    <div class="large-9 columns" role="content">
+      <%= yield %>
+    </div>
+
+    <aside class="large-3 columns">
+      <%= partial '/blog/sidebar' %>
+    </aside>
+  </div><!-- .row -->
+
+<% end %>
