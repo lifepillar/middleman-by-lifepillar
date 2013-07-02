@@ -120,3 +120,6 @@ activate :deploy do |deploy|
   deploy.path = '/deployment/path'
   deploy.clean = true
 end
+
+activate :directory_indexes
+page "/404.html", :directory_index => false
