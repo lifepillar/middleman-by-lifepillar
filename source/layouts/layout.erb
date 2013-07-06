@@ -25,5 +25,6 @@
     <script>
       $(document).foundation();
     </script>
+    <% if content_for?(:end_body) %><%= yield_content :end_body %><% end %>
   </body>
 </html>
