@@ -1,8 +1,6 @@
 <% wrap_layout :layout do %>
   <% content_for :head do %>
-    <script type="text/javascript"
-      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
+    <%= partial '/partials/mathjax' %>
   <% end %>
   <%= yield %>
 <% end %>
