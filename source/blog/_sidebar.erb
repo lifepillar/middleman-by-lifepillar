@@ -1,4 +1,4 @@
-<h5>Categories</h5>
+<h5>Tags</h5>
 <ul class="side-nav">
   <% blog.tags.each do |tag, articles| %>
     <li><%= link_to tag, tag_path(tag) %> (<%= articles.size %>)</li>
