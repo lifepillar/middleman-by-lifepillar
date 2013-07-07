@@ -1,5 +1,6 @@
 ---
 title: Example Article Bis
+author: Author Name
 date: 2013-07-07 15:22 UTC
 tags: example
 ---

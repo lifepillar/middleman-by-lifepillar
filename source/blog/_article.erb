@@ -9,8 +9,8 @@
   </h3>
 
   <h6>
-    Written by <a href="<%= data.blog.contact_url %>"><%= data.blog.author %></a>
-    on <time datetime="<%= article.date.strftime('%Y-%m-%d') %>"><%= article.date.strftime('%A %b %e, %Y') %></time>
+    Posted on <time datetime="<%= article.date.strftime('%Y-%m-%d') %>"><%= article.date.strftime('%A %b %e, %Y') %></time>
+    by <a href="<%= data.blog.contact_url %>"><%= article.data.author || data.blog.author %></a>
   </h6>
 
   <% if digest %>
