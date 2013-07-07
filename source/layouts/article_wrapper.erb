@@ -1,5 +1,21 @@
 <% wrap_layout :layout do %>
 
+  <!-- Nav Bar -->
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="nav-bar right">
+        <ul class="button-group">
+          <% data.main_menu.each do |item| %>
+          <li><a href="<%= item.link %>" class="button"><%= item.title %></a></li>
+          <% end %>
+        </ul>
+      </div>
+      <h1><%= data.blog.name %> <small><%= data.blog.slogan %></small></h1>
+      <hr>
+    </div>
+  </div>
+  <!-- End Nav -->
+
   <!-- Main Blog Content -->
   <div class="row">
     <div class="large-9 columns" role="content">
