@@ -5,6 +5,7 @@
     <div class="large-12 columns">
       <div class="nav-bar right">
         <ul class="button-group">
+          <li><a href="/" class="button"><%= data.site.name %></a></li>
           <% data.main_menu.each do |item| %>
           <li><a href="<%= item.link %>" class="button"><%= item.title %></a></li>
           <% end %>
