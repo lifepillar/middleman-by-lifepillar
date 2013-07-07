@@ -124,4 +124,9 @@ end
 activate :directory_indexes
 page "/404.html", :directory_index => false
 
+activate :syntax,
+         :linenos => 'inline',
+         :anchorlinenos => true,
+         :linenostart => 2
+
 activate :livereload

@@ -10,7 +10,8 @@ It has support for:
 - blogging (through the [middleman-blog](https://github.com/middleman/middleman-blog) gem);
 - [Disqus](http://disqus.com) comments (disabled by default);
 - [Google Analytics](https://accounts.google.com) (disabled by default);
-- [MathJax](http://www.mathjax.org) (optional).
+- [MathJax](http://www.mathjax.org) (optional);
+- Syntax highlighting (through the [middleman-syntax](https://github.com/middleman/middleman-syntax) gem).
 
 ## Installation and Upgrade
 
