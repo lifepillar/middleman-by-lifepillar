@@ -1,7 +1,7 @@
 ---
 title: Example Article Ter
 date: 2013-07-07 15:23 UTC
-tags: test
+tags:
 ---
 
 This is a third example article. You probably want to delete it and write your

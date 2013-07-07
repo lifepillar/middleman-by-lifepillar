@@ -23,17 +23,21 @@
     <p class="readmore"><%= link_to 'Read more &rarr;', article.url, :class => 'secondary button radius' %></p>
   <% end %>
 
-  <% unless digest %>
-    <ul class="read_next">
-      <li><%= article.previous_article ? link_to("<i class='icon-caret-left'></i> #{article.previous_article.title}", article.previous_article) : "&nbsp;" %></li>
-      <li><%= article.next_article ? link_to("#{article.next_article.title} <i class='icon-caret-right'></i>", article.next_article) : "&nbsp;" %></li>
-    </ul>
-
-    <ul class="inline-list">
+  <% unless article.tags.empty? %>
+    <p><strong>Tags:</strong>
       <% article.tags.each do |tag| %>
-        <li><%= link_to tag, tag_path(tag), :class => 'tiny button secondary round' %></li>
+        <%= link_to tag, tag_path(tag) %>
       <% end %>
-    </ul>
+    </p>
+  <% end %>
+
+  <% unless digest %>
+    <% if article.previous_article or article.next_article %>
+      <ul class="read_next">
+        <li><%= article.previous_article ? link_to("<i class='icon-caret-left'></i> #{article.previous_article.title}", article.previous_article) : "&nbsp;" %></li>
+        <li><%= article.next_article ? link_to("#{article.next_article.title} <i class='icon-caret-right'></i>", article.next_article) : "&nbsp;" %></li>
+      </ul>
+    <% end %>
 
     <%= partial '/partials/disqus' %>
   <% end %>
