@@ -1,4 +1,6 @@
+- title: Blog
+  link: /blog
 - title: Foo
-  link: /foo
+  link: \#
 - title: Bar
-  link: /bar
+  link: \#
