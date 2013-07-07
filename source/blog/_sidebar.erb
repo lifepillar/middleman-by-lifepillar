@@ -1,19 +1,19 @@
 <h5>Tags</h5>
-<ul class="side-nav">
+<ul class="no-bullet">
   <% blog.tags.each do |tag, articles| %>
     <li><%= link_to tag, tag_path(tag) %> (<%= articles.size %>)</li>
   <% end %>
 </ul>
 
 <h5>Recent Articles</h5>
-<ul class="side-nav">
+<ul class="no-bullet">
   <% blog.articles[0...10].each do |article| %>
     <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
   <% end %>
 </ul>
 
 <h5>By Year</h5>
-<ul class="side-nav">
+<ul class="no-bullet">
   <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
     <li><%= link_to year, blog_year_path(year) %> (<%= articles.size %>)</li>
   <% end %>
