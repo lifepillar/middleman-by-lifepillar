@@ -1,10 +1,3 @@
-<h5>Tags</h5>
-<ul class="no-bullet">
-  <% blog.tags.each do |tag, articles| %>
-    <li><%= link_to tag, tag_path(tag) %> (<%= articles.size %>)</li>
-  <% end %>
-</ul>
-
 <h5>Recent Articles</h5>
 <ul class="no-bullet">
   <% blog.articles[0...10].each do |article| %>
@@ -16,5 +9,13 @@
 <ul class="no-bullet">
   <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
     <li><%= link_to year, blog_year_path(year) %> (<%= articles.size %>)</li>
+  <% end %>
+</ul>
+
+<h5>Tags</h5>
+
+<ul class="no-bullet">
+  <% blog.tags.each do |tag, articles| %>
+    <li><%= link_to tag, tag_path(tag) %> (<%= articles.size %>)</li>
   <% end %>
 </ul>
