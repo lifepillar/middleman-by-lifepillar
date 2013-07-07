@@ -1,45 +1,35 @@
 ---
+layout: article_wrapper
 pageable: true
 ---
-<div class="row">
 
-  <div class="large-9 columns" role="content">
+<h2>Archive for
+  <% case page_type
+     when 'day' %>
+    <%= Date.new(year, month, day).strftime('%b %e %Y') %>
+  <% when 'month' %>
+    <%= Date.new(year, month, 1).strftime('%b %Y') %>
+  <% when 'year' %>
+    <%= year %>
+  <% end %>
+</h2>
 
-    <h2>Archive for
-      <% case page_type
-         when 'day' %>
-        <%= Date.new(year, month, day).strftime('%b %e %Y') %>
-      <% when 'month' %>
-        <%= Date.new(year, month, 1).strftime('%b %Y') %>
-      <% when 'year' %>
-        <%= year %>
-      <% end %>
-    </h2>
+<% if paginate %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
 
-    <% if paginate %>
-      <p>Page <%= page_number %> of <%= num_pages %></p>
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
 
-      <% if prev_page %>
-        <p><%= link_to 'Previous page', prev_page %></p>
-      <% end %>
-    <% end %>
+<ul class="no-bullet">
+  <% page_articles.each_with_index do |article, i| %>
+    <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+  <% end %>
+</ul>
 
-    <ul>
-      <% page_articles.each_with_index do |article, i| %>
-        <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-      <% end %>
-    </ul>
-
-    <% if paginate %>
-      <% if next_page %>
-        <p><%= link_to 'Next page', next_page %></p>
-      <% end %>
-    <% end %>
- 
-  </div>
-
-  <aside class="large-3 columns">
-    <%= partial '/blog/sidebar' %>
-  </aside>
-
-</div><!-- .row -->
+<% if paginate %>
+  <% if next_page %>
+    <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+<% end %>
