@@ -1,6 +1,6 @@
 ---
 title: Example Article Ter
-author: Author Name
+author: Article Author
 date: 2013-07-07 15:23 UTC
 tags:
 ---
