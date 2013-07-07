@@ -100,7 +100,7 @@ end
 desc 'Install/update Zurb Foundation (see http://foundation.zurb.com/docs/sass.html).'
 task :zurb_foundation do
   begin
-    sh "bundle exec compass create '#{ZURB_FOUNDATION}' -r zurb-foundation --using foundation"
+    sh "bundle exec compass create '#{ZURB_FOUNDATION}' --force -r zurb-foundation --using foundation"
     zurb_js = JAVASCRIPTS
     zurb_css = CSS+'zurb-foundation'
     zurb_js.mkpath
