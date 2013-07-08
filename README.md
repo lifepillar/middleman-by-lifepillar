@@ -35,7 +35,7 @@ You may also clone into `~/.middleman` and use as a Middleman template. For this
 
 Then:
 
-    git clone http://github.com/lifepillar/middleman-by-lifepillar ~/.middleman
+    git clone http://github.com/lifepillar/middleman-by-lifepillar ~/.middleman/middleman-by-lifepillar
 
 From now on, new projects can be created with
 
