@@ -7,7 +7,8 @@
 # Ignore bundler config
 .bundle
 
-# Ignore the build directory
+# Ignore the build and lib directories
+/lib
 /public
 
 # Ignore Sass' cache
