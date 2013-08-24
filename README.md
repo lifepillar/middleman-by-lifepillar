@@ -7,9 +7,10 @@ This is a [Middleman](http://middlemanapp.com) template I have built for myself.
 
 It has support for:
 
+- updating the included libraries to the latest version;
 - blogging (through the [middleman-blog](https://github.com/middleman/middleman-blog) gem);
 - [Disqus](http://disqus.com) comments (disabled by default);
-- [Google Analytics](https://accounts.google.com) (disabled by default);
+- Classic and Universal [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) (disabled by default);
 - [MathJax](http://www.mathjax.org) (optional);
 - Syntax highlighting (through the [middleman-syntax](https://github.com/middleman/middleman-syntax) gem).
 
