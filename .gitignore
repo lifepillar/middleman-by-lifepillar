@@ -4,8 +4,10 @@
 # or operating system, you probably want to add a global ignore instead:
 # git config --global core.excludesfile ~/.gitignore_global
 
-# Ignore bundler config
-.bundle
+# Ignore installed gems and executables, but not Bundler's config
+/bin
+/.bundle/*
+!/.bundle/config
 
 # Ignore the build and lib directories
 /lib
