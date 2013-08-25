@@ -75,4 +75,18 @@ The code is organized as follows:
 
 - The default author's name for blog posts (as well as the blog's title and slogan) can be set in `blog.yml`. To override the default author for a specific post, add an `author: <name>` key to that post's frontmatter. This information is correctly exported to the XML feed.
 
+- If you do not need a blog, comment out or delete the
+
+      activate :blog do |blog|
+        ...
+      end
+
+  section in `config.rb` and add the following line instead:
+
+      ignore "blog/*"
+
+  Then, edit `main.css.scss` and comment out or delete
+
+      @import "blog";
+
 - The `lib` folder contains pristine copies of the external components (Foundation and Font Awesome). It is not needed to build a site (the relevant files are copied into the `source` folder) and can be removed at any time (it is re-created by rake tasks anyway).
