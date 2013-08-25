@@ -77,11 +77,11 @@ The code is organized as follows:
 
 - If you do not need a blog, comment out or delete the
 
-      activate :blog do |blog|
+        activate :blog do |blog|
         ...
-      end
+        end
 
-  section in `config.rb` and add the following line instead:
+  section in `config.rb` and add the following line instead
 
       ignore "blog/*"
 
