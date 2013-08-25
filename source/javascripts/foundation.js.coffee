@@ -1,4 +1,5 @@
 #= require "foundation/foundation.js"
+#= require "foundation/foundation.abide.js"
 #= require "foundation/foundation.alerts.js"
 #= require "foundation/foundation.clearing.js"
 #= require "foundation/foundation.cookie.js"
