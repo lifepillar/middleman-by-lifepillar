@@ -17,6 +17,7 @@
 .sass-cache
 
 # Ruby managers
+.ruby-version
 .rbenv-version
 .rvmrc
 
