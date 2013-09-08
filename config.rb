@@ -2,7 +2,7 @@ require 'kramdown'
 require 'zurb-foundation'
 
 set :markdown_engine, :kramdown
-set :md, :layout_engine => :erb
+set :md, :layout_engine => :erb, :auto_ids => false
 
 ignore "javascripts/foundation/*"
 
