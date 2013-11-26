@@ -114,18 +114,11 @@ task :zurb_foundation do
     msg 'SCSS files copied'
     mv zurb_css + 'app.scss', zurb_css + '_app.scss', :verbose => false
     msg 'app.scss renamed'
-    # Generate foundation.js.coffee
-    File.open(JAVASCRIPTS+'foundation.js.coffee', 'w') do |f|
-      f.puts "#= require \"foundation/foundation.js\""
-      Pathname.glob("#{zurb_js}/foundation/*.*.js").each do |js|
-        f.puts "#= require \"foundation/#{js.basename}\""
-      end
-    end
-    msg 'foundation.js.coffee created'
   rescue => e
     odie e
   end
   msg 'Zurb Foundation updated'
+  msg 'You may want to revise your foundation.js.coffee.'
 end
 
 desc 'Update all the components.'
