@@ -34,8 +34,8 @@
   <% unless digest %>
     <% if article.previous_article or article.next_article %>
       <ul class="read_next">
-        <li><%= article.previous_article ? link_to("<i class='icon-caret-left'></i> #{article.previous_article.title}", article.previous_article) : "&nbsp;" %></li>
-        <li><%= article.next_article ? link_to("#{article.next_article.title} <i class='icon-caret-right'></i>", article.next_article) : "&nbsp;" %></li>
+        <li><%= article.previous_article ? link_to("<i class='fa fa-caret-left'></i> #{article.previous_article.title}", article.previous_article) : "&nbsp;" %></li>
+        <li><%= article.next_article ? link_to("#{article.next_article.title} <i class='fa fa-caret-right'></i>", article.next_article) : "&nbsp;" %></li>
       </ul>
     <% end %>
 
