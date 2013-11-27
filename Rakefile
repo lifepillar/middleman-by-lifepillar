@@ -69,36 +69,7 @@ task :bundle_update do
   sh 'bundle update'
 end
 
-desc 'Install the specified version of Font Awesome.'
-task :font_awesome, [:v] do |t,args|
-  args.with_defaults(:v => ENV['v'])
-  odie 'Please specify Font Awesome version (e.g., v=4.0.3)' unless args.v
-  fa_name = 'font-awesome'
-  fa = "#{fa_name}-#{args.v}"
-  temp = Tempfile.new(fa+'.zip')
   begin
-    msg "Downloading Font Awesome v#{args.v}..."
-    sh "curl http://fortawesome.github.io/Font-Awesome/assets/#{fa}.zip -o '#{temp.path}'", :verbose => false
-    msg 'Font Awesome downloaded'
-    sh "rm -fr '#{LIB}/'#{fa_name}*", :verbose => false
-    msg 'Old copy removed'
-    sh "unzip -d '#{LIB}' '#{temp.path}' >/dev/null", :verbose => false
-    temp.unlink
-    msg 'Archive unzipped'
-
-    cp Pathname.glob(LIB+"#{fa}/fonts/*"), FONTS, :verbose => false
-    msg 'Font files copied'
-    font_awesome_css = CSS+fa_name
-    font_awesome_css.mkpath
-    sh "rsync -az --delete '#{LIB}/#{fa}/scss/' #{font_awesome_css}/", :verbose => false
-    msg 'SCSS files copied'
-    mv font_awesome_css + "#{fa_name}.scss", font_awesome_css + "_#{fa_name}.scss", :verbose => false  
-    msg "#{fa_name}.scss renamed to _#{fa_name}.scss"
-  rescue => e
-    odie e
-  end
-  msg 'Font Awesome updated'
-end
 
 desc 'Install/update Zurb Foundation (see http://foundation.zurb.com/docs/sass.html).'
 task :zurb_foundation do
