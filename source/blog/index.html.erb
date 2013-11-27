@@ -1,14 +1,14 @@
 ---
-layout: sample_article_wrapper
+layout: article_wrapper
 pageable: true
 per_page: 10
 ---
 
 <% page_articles.each do |article| %>
-    <%= partial '/blog/partials/sample_article', :locals => {:article => article, :digest => true} %>
+    <%= partial '/blog/partials/article', :locals => {:article => article, :digest => true} %>
 <% end %>
 
-<%= partial '/blog/partials/sample_pagination', :locals => {
+<%= partial '/blog/partials/pagination', :locals => {
   :paginate => paginate,
   :next_page => next_page,
   :prev_page => prev_page,
