@@ -7,10 +7,6 @@ set :md, :layout_engine => :erb, :auto_ids => false
 # Compass
 ###
 
-# Susy grids in Compass
-# First: gem install susy
-# require 'susy'
-
 # Change Compass configuration
 compass_config do |config|
   config.add_import_path '../bower_components/foundation/scss'
@@ -47,16 +43,6 @@ page 'humans.txt', :layout => false
 # Helpers
 ###
 
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
-
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
-
 set :build_dir, 'public'
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
@@ -64,13 +50,8 @@ set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do
-  # For example, change the Compass output style for deployment
   activate :minify_css
-
-  # Minify Javascript on build
   activate :minify_javascript
-
-  # Minify HTML on build
   activate :minify_html
 
   # Enable cache buster
