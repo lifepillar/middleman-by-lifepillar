@@ -5,8 +5,8 @@
   Software: Middleman, TextWrangler, Git
 
   Components:
-    * ZURB Foundation - http://zurb.com
-    * Font Awesome - http://fortawesome.github.io/Font-Awesome/
+    * ZURB Foundation - http://foundation.zurb.com
+    * Font Awesome - http://fontawesome.io
 
   Support for:
     * Disqus
