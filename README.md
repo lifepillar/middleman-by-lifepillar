@@ -71,7 +71,7 @@ The code is organized as follows:
 
 - Site metadata (site title, slogan, author, etc…) and menu data are kept in YAML files in the `data` folder. For example, to add a link to the main menu, just add a title/link pair to `main_menu.yml`.
 
-- To use Disqus comments or Google Analytics, edit the corresponding partials (in the `partials` folder) with your account information. Then, include the partials in some template or layout. For example, to enable comments in blog posts, edit `blog/_article.erb`.
+- To use Disqus comments or Google Analytics, edit the corresponding partials (in the `partials` folder) with your account information. Then, include the partials in some template or layout. For example, to enable comments in blog posts, edit `blog/partials/_article.erb`.
 
 - To enable MathJax in a page, add
 
