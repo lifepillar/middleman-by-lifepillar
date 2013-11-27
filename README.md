@@ -1,18 +1,23 @@
 # Middleman by Lifepillar
 
-This is a [Middleman](http://middlemanapp.com) template I have built for myself. It includes:
-
-- [Zurb Foundation](http://foundation.zurb.com);
-- [Font Awesome](http://fortawesome.github.io/Font-Awesome/).
-
+This is a [Middleman](http://middlemanapp.com) template I have built for myself.
 It has support for:
 
-- updating the included libraries to the latest version;
+- [Zurb Foundation 5 or later](http://foundation.zurb.com);
+- [Font Awesome 4 or later](http://fortawesome.github.io/Font-Awesome/).
 - blogging (through the [middleman-blog](https://github.com/middleman/middleman-blog) gem);
 - [Disqus](http://disqus.com) comments (disabled by default);
 - Classic and Universal [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) (disabled by default);
 - [MathJax](http://www.mathjax.org) (optional);
 - Syntax highlighting (through the [middleman-syntax](https://github.com/middleman/middleman-syntax) gem).
+
+
+## Requirements
+
+- Git!
+- Ruby 1.9+ (tested with Ruby 2.0).
+- [Bower](http://bower.io).
+
 
 ## Installation
 
@@ -20,11 +25,12 @@ First, install [Bundler](http://bundler.io) if you haven't done so already:
 
     gem install bundler
 
-To create a self-contained project (with all the required gems included in the project directory):
+To create a self-contained project (with everything included inside the project directory):
 
     git clone http://github.com/lifepillar/middleman-by-lifepillar my-project
     cd my-project
     bundle install
+    bower install
 
 Then, to build and serve your web site:
 
@@ -38,17 +44,19 @@ Alternatively, if you already have Middleman installed globally, you may add thi
 After that, you can create a project with:
 
     middleman init my-project --template=middleman-by-lifepillar
+    bower install
 
 
 ## Upgrade
 
-Assuming that you have created a self-contained project, you may type
+To upgrade the installed gems (including Font Awesome) execute this command inside
+the project root directory:
 
-    bundle exec rake update
+    bundle update
 
-to get the latest version of all the gems and the external components (if you have used `middleman init` to create the project, use `rake update` to update it). In particular, the command above will update the content of the `lib` folder (creating the folder if it doesn't exist) and will copy the necessary files from the `lib` folder into the `source` folder, at the appropriate locations.
+To upgrade Foundation:
 
-I recommend that you keep your project under version control, so you can see exactly what is updated and you can easily revert if something goes wrong.
+    bower update
 
 
 ## Usage and Customization
@@ -88,5 +96,3 @@ The code is organized as follows:
   Then, edit `main.css.scss` and comment out or delete
 
       @import "blog";
-
-- The `lib` folder contains pristine copies of the external components (Foundation and Font Awesome). It is not needed to build a site (the relevant files are copied into the `source` folder) and can be removed at any time (it is re-created by rake tasks anyway).
