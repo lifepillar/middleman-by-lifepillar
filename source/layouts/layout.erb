@@ -8,7 +8,7 @@
     <title><%= data.page.title || data.site.name %></title>
 
     <%= stylesheet_link_tag "main" %>
-    <%= javascript_include_tag  "vendor/custom.modernizr" %>
+    <%= javascript_include_tag  "modernizr" %>
     <%= favicon_tag 'favicon.png' %>
     <% if content_for?(:head) %><%= yield_content :head %><% end %>
   </head>
@@ -17,18 +17,7 @@
 
     <%= yield %>
 
-    <script>
-      if ('__proto__' in {}) {
-        document.write('<%= js_escape_html(javascript_include_tag 'vendor/zepto.js') %>');
-      }
-      else {
-        document.write('<%= js_escape_html(javascript_include_tag 'vendor/jquery.js') %>');
-      }
-    </script>
     <%= javascript_include_tag "foundation" %>
-    <script>
-      $(document).foundation();
-    </script>
     <% if content_for?(:end_body) %><%= yield_content :end_body %><% end %>
   </body>
 </html>

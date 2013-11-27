@@ -1,10 +1,7 @@
 require 'kramdown'
-require 'zurb-foundation'
 
 set :markdown_engine, :kramdown
 set :md, :layout_engine => :erb, :auto_ids => false
-
-ignore "javascripts/foundation/*"
 
 ###
 # Compass
@@ -15,9 +12,11 @@ ignore "javascripts/foundation/*"
 # require 'susy'
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+  config.add_import_path '../bower_components/foundation/scss'
+end
+
+sprockets.append_path "../bower_components/foundation/js"
 
 ###
 # Page options, layouts, aliases and proxies

@@ -9,6 +9,9 @@
 /.bundle/*
 !/.bundle/config
 
+# Ignore Bower components
+/bower_components
+
 # Ignore the build and lib directories
 /lib
 /public

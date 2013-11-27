@@ -8,5 +8,5 @@ gem 'middleman-livereload'
 gem 'middleman-minify-html'
 gem 'middleman-syntax'
 gem 'rake'
-gem 'zurb-foundation'
+gem 'foundation'
 gem 'font-awesome-sass', :require => false
