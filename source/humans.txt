@@ -2,12 +2,13 @@
 
 /* SITE */
   Standards: HTML5, CSS3
-  Software: Middleman, Textmate, Git
+  Software: Middleman, TextWrangler, Git
 
   Components:
     * ZURB Foundation - http://zurb.com
     * Font Awesome - http://fortawesome.github.io/Font-Awesome/
 
-	Support for:
-		* MathJax
-		* Google Analytics
+  Support for:
+    * Disqus
+    * Google Analytics
+    * MathJax
