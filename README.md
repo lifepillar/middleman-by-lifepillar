@@ -6,9 +6,9 @@ It has support for:
 - [Zurb Foundation 5 or later](http://foundation.zurb.com);
 - [Font Awesome 4 or later](http://fortawesome.github.io/Font-Awesome/).
 - blogging (through the [middleman-blog](https://github.com/middleman/middleman-blog) gem);
-- [Disqus](http://disqus.com) comments (disabled by default);
-- Classic and Universal [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) (disabled by default);
-- [MathJax](http://www.mathjax.org) (optional);
+- [Disqus](http://disqus.com) comments (through a partial);
+- Classic and Universal [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) (through a partial);
+- [MathJax](http://www.mathjax.org) (through a partial);
 - Syntax highlighting (through the [middleman-syntax](https://github.com/middleman/middleman-syntax) gem).
 
 
@@ -32,6 +32,9 @@ To create a self-contained project (with everything included inside the project 
     bundle install
     bower install
 
+`bundle install` will update all the gems and, in particular, Font Awesome.
+`bower install` will create a directory called `bower_components`, containing Foundation's files.
+
 Then, to build and serve your web site:
 
     bundle exec middleman build
@@ -44,6 +47,7 @@ Alternatively, if you already have Middleman installed globally, you may add thi
 After that, you can create a project with:
 
     middleman init my-project --template=middleman-by-lifepillar
+    cd my-project
     bower install
 
 
