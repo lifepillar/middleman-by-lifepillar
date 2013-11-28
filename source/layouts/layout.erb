@@ -10,14 +10,29 @@
     <%= stylesheet_link_tag "main" %>
     <%= javascript_include_tag  "modernizr" %>
     <%= favicon_tag 'favicon.png' %>
+    <% unless current_page.data.head.nil? %>
+      <% for p in current_page.data.head %>
+        <%= partial "/partials/#{p}" %>
+      <% end %>
+    <% end %>
     <% if content_for?(:head) %><%= yield_content :head %><% end %>
   </head>
 
   <body class="<%= page_classes %>">
+    <% unless current_page.data.beginbody.nil? %>
+      <% for p in current_page.data.beginbody %>
+        <%= partial "/partials/#{p}" %>
+      <% end %>
+    <% end %>
 
     <%= yield %>
 
     <%= javascript_include_tag "foundation" %>
+    <% unless current_page.data.endbody.nil? %>
+      <% for p in current_page.data.endbody %>
+        <%= partial "/partials/#{p}" %>
+      <% end %>
+    <% end %>
     <% if content_for?(:end_body) %><%= yield_content :end_body %><% end %>
   </body>
 </html>
