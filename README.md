@@ -4,12 +4,12 @@ This is a [Middleman](http://middlemanapp.com) template I have built for myself.
 It has support for:
 
 - [Zurb Foundation 5 or later](http://foundation.zurb.com);
-- [Font Awesome 4 or later](http://fortawesome.github.io/Font-Awesome/).
+- [Font Awesome 4 or later](http://fortawesome.github.io/Font-Awesome/);
 - blogging (through the [middleman-blog](https://github.com/middleman/middleman-blog) gem);
-- [Disqus](http://disqus.com) comments (through a partial);
-- Classic and Universal [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) (through a partial);
-- [MathJax](http://www.mathjax.org) (through a partial);
-- Syntax highlighting (through the [middleman-syntax](https://github.com/middleman/middleman-syntax) gem).
+- syntax highlighting (through the [middleman-syntax](https://github.com/middleman/middleman-syntax) gem);
+- [Disqus](http://disqus.com);
+- Classic and Universal [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/);
+- [MathJax](http://www.mathjax.org).
 
 
 ## Requirements
@@ -65,38 +65,41 @@ To upgrade Foundation:
 
 ## Usage and Customization
 
-One thing you may want to set in `config.rb` is the `Time.zone`. Then, you should edit the site metadata in the `data` folder. The project contains sample pages adapted from [Zurb Foundation's templates](http://foundation.zurb.com/templates.php) (Workspace and Blog, in particular). You may use them as a starting point to develop your site.
+One thing you may want to set in `config.rb` is the `Time.zone`. Then, you should edit the site metadata in the `data` folder. The project contains sample pages adapted from [Zurb Foundation's templates](http://foundation.zurb.com/templates.html) (Workspace and Blog). You may use them as a starting point to develop your site.
 
-The code is organized as follows:
+Site metadata (site title, slogan, author, etc…) and menu data are kept in YAML files in the `data` folder. For example, to add a link to the main menu, just add a title/link pair to `main_menu.yml`.
 
-- Site metadata (site title, slogan, author, etc…) and menu data are kept in YAML files in the `data` folder. For example, to add a link to the main menu, just add a title/link pair to `main_menu.yml`.
+In the frontmatter of any page, you may use the variables `head`, `beginbody`, and `endbody`
+to load additional partials, just before the `</head>` tag, just after `<body>`, and just before `</body>`, respectively.
+For example, for a page that includes MathJax, Disqus comments and Google Analytics, your frontmatter might look like this:
 
-- To use Disqus comments or Google Analytics, edit the corresponding partials (in the `partials` folder) with your account information. Then, include the partials in some template or layout. For example, to enable comments in blog posts, edit `blog/partials/_article.erb`.
+    ---
+    title: My Page
+    head: [mathjax]
+    endbody: [disqus, analytics]
+    ---
 
-- To enable MathJax in a page, add
+Each variable takes a list of names of partials, which must exist in the `partials` folder. You may
+use your own partials in the same way. Of course, for a bunch of pages having the same structure,
+it is better to define a custom layout. See, for instance, the `mathjax.erb` layout in the `layouts` folder.
 
-        layout: mathjax
 
-  to the frontmatter. To configure MathJax, edit the corresponding partial in the `partials` folder.
+To create a new post, type
 
-- To create a new post, type
+    bundle exec middleman article '<title>'
 
-        bundle exec middleman article '<title>'
+and edit the generated file. The default author's name for blog posts (as well as the blog's title and slogan) can be set in `blog.yml`. To override the default author for a specific post, add an `author: <name>` key to that post's frontmatter. This information is correctly exported to the XML feed.
 
-  and edit the generated file.
+If you do not need a blog, comment out or delete the following section in `config.rb`:
 
-- The default author's name for blog posts (as well as the blog's title and slogan) can be set in `blog.yml`. To override the default author for a specific post, add an `author: <name>` key to that post's frontmatter. This information is correctly exported to the XML feed.
+    activate :blog do |blog|
+    ...
+    end
 
-- If you do not need a blog, comment out or delete the
+and add the following line instead
 
-        activate :blog do |blog|
-        ...
-        end
+    ignore "blog/*"
 
-  section in `config.rb` and add the following line instead
+Then, edit `main.css.scss` and comment out or delete
 
-      ignore "blog/*"
-
-  Then, edit `main.css.scss` and comment out or delete
-
-      @import "blog";
+    @import "blog";
