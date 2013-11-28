@@ -7,6 +7,7 @@ gem 'middleman-deploy'
 gem 'middleman-livereload'
 gem 'middleman-minify-html'
 gem 'middleman-syntax'
+gem 'nokogiri'
 gem 'rake'
 gem 'foundation'
 gem 'font-awesome-sass', :require => false
