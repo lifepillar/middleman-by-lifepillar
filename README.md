@@ -11,8 +11,6 @@ It has support for:
 - Classic and Universal [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/);
 - [MathJax](http://www.mathjax.org).
 
-You may see sample content generated with this template [here](http://lifepillar.com/middleman-by-lifepillar).
-
 ## Requirements
 
 - Git!
