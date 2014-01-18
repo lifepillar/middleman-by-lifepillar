@@ -1,1 +1,1 @@
-//= require "vendor/custom.modernizr"
+//= require "vendor/modernizr"
