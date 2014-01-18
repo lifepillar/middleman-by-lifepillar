@@ -15,7 +15,7 @@ It has support for:
 ## Requirements
 
 - Git!
-- Ruby 1.9+ (tested with Ruby 2.0).
+- Ruby 1.9+ (tested with Ruby 2.0 and 2.1).
 - [Bower](http://bower.io).
 
 
