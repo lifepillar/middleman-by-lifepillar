@@ -19,6 +19,9 @@
   </head>
 
   <body class="<%= page_classes %>">
+
+    <%= partial "/partials/sample_warning" %> <!-- Remove this! -->
+
     <% unless current_page.data.beginbody.nil? %>
       <% for p in current_page.data.beginbody %>
         <%= partial "/partials/#{p}" %>
