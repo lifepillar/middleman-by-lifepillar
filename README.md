@@ -4,7 +4,7 @@ This is a [Middleman](http://middlemanapp.com) template I have built for myself.
 It has support for:
 
 - [Zurb Foundation 5 or later](http://foundation.zurb.com);
-- [Font Awesome 4 or later](http://fortawesome.github.io/Font-Awesome/);
+- [Font Awesome 4.0.3](http://fortawesome.github.io/Font-Awesome/);
 - blogging (through the [middleman-blog](https://github.com/middleman/middleman-blog) gem);
 - syntax highlighting (through the [middleman-syntax](https://github.com/middleman/middleman-syntax) gem);
 - [Disqus](http://disqus.com);
@@ -16,7 +16,7 @@ You may see sample content generated with this template [here](http://lifepillar
 ## Requirements
 
 - Git!
-- Ruby 1.9+ (tested with Ruby 2.0 and 2.1).
+- Ruby 1.9+ (tested with Ruby 2.x).
 - [Bower](http://bower.io).
 
 
@@ -33,7 +33,7 @@ To create a self-contained project (with everything included inside the project 
     bundle install
     bower install
 
-`bundle install` will update all the gems and, in particular, Font Awesome.
+`bundle install` will update all the gems.
 `bower install` will create a directory called `bower_components`, containing Foundation's files.
 
 Then, to build and serve your web site:
@@ -54,7 +54,7 @@ After that, you can create a project with:
 
 ## Upgrade
 
-To upgrade the installed gems (including Font Awesome) execute this command inside
+To upgrade the installed gems execute this command inside
 the project root directory:
 
     bundle update
