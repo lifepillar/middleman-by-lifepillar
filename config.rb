@@ -98,11 +98,9 @@ page "/blog/feed.xml", :layout => false
 
 # Middleman Deploy
 activate :deploy do |deploy|
-  deploy.method = :rsync
-  deploy.user = 'username'
-  deploy.host = 'hostname'
-  deploy.port = 22
-  deploy.path = '/deployment/path'
+  deploy.method = :git
+  deploy.remote = 'origin'
+  deploy.branch = 'gh-pages'
   deploy.clean = true
 end
 
