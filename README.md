@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> **As of March 11, 2026, this repository is on [Codeberg](https://codeberg.org/lifepillar/RubyBackupBouncer).**
+
 # Middleman by Lifepillar
 
 This is a [Middleman](http://middlemanapp.com) template I have built for myself.
